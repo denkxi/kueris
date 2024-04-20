@@ -68,6 +68,10 @@
   }
 }
 
+.text-shadow {
+  text-shadow: 1px 1px 2px gray;
+}
+
 /* Tailwind Styles */
 
 .app {
@@ -87,7 +91,7 @@
 }
 
 .orange_gradient {
-  @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
+  @apply bg-gradient-to-tr from-amber-400 via-red-400 to-yellow-400 bg-clip-text text-transparent;
 }
 
 .green_gradient {
@@ -95,7 +99,11 @@
 }
 
 .blue_gradient {
-  @apply bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent;
+  @apply bg-gradient-to-br from-pink-300 to-cyan-300 bg-clip-text text-transparent;
+}
+
+.purple_gradient {
+  @apply bg-gradient-to-br from-purple-500 to-cyan-500 bg-clip-text text-transparent;
 }
 
 .desc {
@@ -125,7 +133,7 @@
 
 /* Form Component */
 .form_textarea {
-  @apply w-full flex rounded-lg h-[200px] mt-2 p-3 text-sm text-gray-500 outline-0;
+  @apply w-full flex rounded-lg h-[75px] mt-2 p-3 text-sm text-gray-500 outline-0;
 }
 
 .form_input {
@@ -134,11 +142,11 @@
 
 /* Nav Component */
 .logo_text {
-  @apply max-sm:hidden font-shadows font-semibold text-lg text-black tracking-wide;
+  @apply max-sm:hidden font-shadows font-bold text-[40px] text-black tracking-wide;
 }
 
 .dropdown {
-  @apply absolute right-0 top-full mt-3 w-full p-5 rounded-lg bg-white min-w-[210px] flex flex-col gap-2 justify-end items-end;
+  @apply absolute right-0 top-full mt-3 w-full p-5 rounded-3xl bg-white min-w-[210px] flex flex-col gap-2 justify-end items-end border-2 border-gray-500;
 }
 
 .dropdown_link {
@@ -147,7 +155,7 @@
 
 /* PromptCard Component */
 .prompt_card {
-  @apply flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit;
+  @apply flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[450px] w-full h-fit;
 }
 
 .flex-center {
