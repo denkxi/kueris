@@ -106,6 +106,7 @@ const Nav = () => {
                   onClick={() => {
                     setToggleDropdown(false);
                     signOut();
+                    
                   }}
                   className="mt-5 w-full outline_btn"
                 >

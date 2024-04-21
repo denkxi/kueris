@@ -18,10 +18,21 @@ const QuoteCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
     setTimeout(() => setCopied(""), 3000);
   };
 
+  const handleProfileClick = () => {
+    if (session?.user.id === post.creator._id) {
+      router.push("/profile");
+    } else {
+      router.push(`/profile/${post.creator._id}?name=${post.creator.username}`);
+    }
+  };
+
   return (
     <div className="prompt_card">
       <div className="flex justify-between items-start gap-52">
-        <div className="flex-1 flex justify-start items-center gap-3 cursor-pointer">
+        <div
+          className="flex-1 flex justify-start items-center gap-3 cursor-pointer "
+          onClick={handleProfileClick}
+        >
           <Image
             src={post.creator.image}
             alt="User image"
@@ -49,6 +60,7 @@ const QuoteCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
             }
             width={12}
             height={12}
+            alt="Copy quote button"
           />
         </div>
       </div>
@@ -58,9 +70,12 @@ const QuoteCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
       </p>
       <p
         className="font-inter text-sm purple_gradient cursor-pointer"
-        onClick={() => handleTagClick && handleTagClick(post.tag)}
+        onClick={() => {
+          router.push("/");
+          handleTagClick && handleTagClick(post.tag);
+        }}
       >
-        {post.tag}
+        #{post.tag}
       </p>
 
       {session?.user.id === post.creator._id && pathName === "/profile" && (
